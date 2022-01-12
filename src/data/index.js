@@ -10,7 +10,10 @@ export const data = [
 	{
 		id: 1,
 		title: "Argus",
-		imgUrl: "./assets/images/2.png"
+		imgUrl: "./assets/images/5.png",
+		desc1: "Lorem ipsum dolor sit amet.",
+		desc2: "Doloribus, ratione.",
+		desc3: "Pariatur expedita similique "
 	},
 	{
 		id: 2,
@@ -28,16 +31,9 @@ export const data = [
 		desc2: "Doloribus, ratione.",
 		desc3: "Pariatur expedita similique "
 	},
+
 	{
 		id: 4,
-		title: "Argus Two",
-		imgUrl: "./assets/images/5.png",
-		desc1: "Lorem ipsum dolor sit amet.",
-		desc2: "Doloribus, ratione.",
-		desc3: "Pariatur expedita similique "
-	},
-	{
-		id: 5,
 		title: "Placeholder",
 		imgUrl: "./assets/images/6.png",
 		desc1: "Lorem ipsum dolor sit amet.",
