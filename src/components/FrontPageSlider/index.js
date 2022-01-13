@@ -7,24 +7,28 @@ import ForwardedSliderItem from "./SliderItem";
 
 import "./index.css";
 
+const handleOnChange = (setIsActive) => {
+	setIsActive(true);
+};
+
+const handleBeforeChange = (setIsActive) => {
+	setIsActive(false);
+};
+
 const FrontPageSlider = () => {
 	const settings = {
-		dots: true,
-		infinite: true,
-		speed: 5000,
-		slidesToShow: 1,
-		autoplay: true,
-		afterChange: () => {
-			setIsActive(true);
-			const timer = setTimeout(() => {
-				setIsActive(false);
-				clearTimeout(timer);
-			}, [2000]);
+		autoPlay: false,
+		afterChange: (idx) => {
+			handleOnChange(setIsActive);
+		},
+		beforeChange: (prevId, newId) => {
+			console.log(prevId, newId);
+			handleBeforeChange(setIsActive);
 		}
 	};
 
 	const [slick, setSlick] = useState({});
-	const [isActive, setIsActive] = useState(false);
+	const [isActive, setIsActive] = useState(true);
 
 	let itemRef = useRef([]);
 
