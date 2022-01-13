@@ -17,12 +17,14 @@ const handleBeforeChange = (setIsActive) => {
 
 const FrontPageSlider = () => {
 	const settings = {
+		nextArrow: <NextArrow />,
+		prevArrow: <PrevArrow />,
+		speed: 2000,
 		autoPlay: false,
 		afterChange: (idx) => {
 			handleOnChange(setIsActive);
 		},
 		beforeChange: (prevId, newId) => {
-			console.log(prevId, newId);
 			handleBeforeChange(setIsActive);
 		}
 	};
@@ -58,3 +60,15 @@ const FrontPageSlider = () => {
 };
 
 export default FrontPageSlider;
+
+const NextArrow = ({ onClick }) => (
+	<button onClick={onClick} className="next-btn">
+		<span className="icon icon-chevron-right"></span>
+	</button>
+);
+
+const PrevArrow = ({ onClick }) => (
+	<button onClick={onClick} className="prev-btn">
+		<span className="icon icon-chevron-left"></span>
+	</button>
+);
