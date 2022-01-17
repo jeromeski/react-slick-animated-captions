@@ -1,3 +1,66 @@
+﻿/*!
+    ----------------------------------
+
+    * Colina - Hotel, Resort & Accommodation Website Theme
+    * Version - 1.1.0 
+    * Copyright (c) 2018 ElaThemes.com 
+
+    ---------------------------------- 
+
+    [Table of contents]
+
+    1. Default body styles
+    2. Container
+    3. Page loader
+    4. Headings
+    5. Header
+    5. Main navigation
+    7. Owl Theme
+    8. Owl-slider-header
+    9. Owl-slider-gallery
+    10. Owl-rooms-carousel
+    11. Button styles
+    12. Breadcrumbs
+    13. Checkbox
+    14. Sections
+    15. Section header
+    16. Page
+    17. Page header
+    18. Category header
+    19. Frontpage-slider
+    20. Image Blocks
+    21. Scroll to top
+    22. Stretcher
+    23. Banner
+    24. Instagram
+    25. Contact
+    26. Tabsy wrapper
+    27. Intro
+    28. Text blocks
+    29. Quotes
+    30. Team
+    31. Facilities
+    32. Facility
+    33. Booking
+    34. Datepicker
+    35. Rooms
+    36. Room
+    37. Gallery
+    38. Blog
+    39. Cards
+    40. Subscribe
+    41. Events
+    42. Checkout
+    43. Step wrapper
+    44. Login wrapper
+    45. Not found
+    46. Comments
+    47. About
+    48. Shortcodes
+    49. Footer
+
+    ----------------------------------
+ */
 /*  
     ----------------------------------
     1. Default body styles
@@ -80,6 +143,8 @@ body *:focus {
     width: 99%;
   }
 }
+
+
 
 /*  
     ----------------------------------
@@ -329,34 +394,6 @@ h6,
   transform: translate3d(0, 0, 0);
 }
 
-/*  
-    ----------------------------------
-    12. Breadcrumbs
-    ----------------------------------
-*/
-.breadcrumb.breadcrumb-inverted {
-  background: transparent;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
 
-.breadcrumb.breadcrumb-inverted > li {
-  color: white;
-}
 
-.breadcrumb.breadcrumb-inverted > li > a {
-  color: white;
-}
-
-.breadcrumb > li.active,
-.breadcrumb > li.active a {
-  color: #00486c;
-}
-
-.breadcrumb > li a.active {
-  color: #00486c;
-}
 

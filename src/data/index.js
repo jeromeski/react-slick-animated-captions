@@ -3,7 +3,7 @@ export const data = [
 		id: 0,
 		title: "Madids Inn",
 		titleSpan: "Doloribus, ratione",
-		imgUrl: "./assets/images/1.png",
+		imgUrl: "assets/images/activity-1.jpg",
 		desc1: "Lorem ipsum dolor sit amet.",
 		desc2: "Doloribus, ratione.",
 		desc3: "Pariatur expedita similique "
@@ -12,7 +12,7 @@ export const data = [
 		id: 1,
 		title: "Argus",
 		titleSpan: "Doloribus, ratione",
-		imgUrl: "./assets/images/5.png",
+		imgUrl: "assets/images/activity-2.jpg",
 		desc1: "Lorem ipsum dolor sit amet.",
 		desc2: "Doloribus, ratione.",
 		desc3: "Pariatur expedita similique "
@@ -21,7 +21,7 @@ export const data = [
 		id: 2,
 		title: "CloudSpace",
 		titleSpan: "",
-		imgUrl: "./assets/images/3.png",
+		imgUrl: "assets/images/activity-3.jpg",
 		desc1: "Lorem ipsum dolor sit amet.",
 		desc2: "Doloribus, ratione.",
 		desc3: "Pariatur expedita similique "
@@ -30,7 +30,7 @@ export const data = [
 		id: 3,
 		title: "Kenware",
 		titleSpan: "",
-		imgUrl: "./assets/images/4.png",
+		imgUrl: "assets/images/activity-1.jpg",
 		desc1: "Lorem ipsum dolor sit amet.",
 		desc2: "Doloribus, ratione.",
 		desc3: "Pariatur expedita similique "
@@ -40,7 +40,7 @@ export const data = [
 		id: 4,
 		title: "Placeholder",
 		titleSpan: "Doloribus, ratione",
-		imgUrl: "./assets/images/6.png",
+		imgUrl: "assets/images/activity-2.jpg",
 		desc1: "Lorem ipsum dolor sit amet.",
 		desc2: "Doloribus, ratione.",
 		desc3: "Pariatur expedita similique "

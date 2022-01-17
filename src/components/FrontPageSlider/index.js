@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState, useRef } from "react";
+import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -7,59 +7,41 @@ import ForwardedSliderItem from "./SliderItem";
 
 import "./index.css";
 
-const handleOnChange = (setIsActive) => {
-	setIsActive(true);
+const onInit = () => {
+	const targetNode = document.querySelector(".slick-active");
+	const targetEls = targetNode.querySelectorAll(".animated");
+	targetEls.forEach((el) => {
+		el.classList.add("active", "fadeUp-in");
+	});
 };
 
-const handleBeforeChange = (setIsActive) => {
-	setIsActive(false);
+const handleOnChange = (idx) => {
+	const afterEl = document.querySelector(`[data-index='${idx}']`);
+	const afterTargetEls = afterEl.querySelectorAll(".animated");
+	afterTargetEls.forEach((item) => {
+		item.classList.add("active", "fadeUp-in");
+	});
 };
 
-const FrontPageSlider = () => {
-	const settings = {
-		nextArrow: <NextArrow />,
-		prevArrow: <PrevArrow />,
-		speed: 2000,
-		autoPlay: false,
-		afterChange: (idx) => {
-			handleOnChange(setIsActive);
-		},
-		beforeChange: (prevId, newId) => {
-			handleBeforeChange(setIsActive);
-		}
-	};
-
-	const [slick, setSlick] = useState({});
-	const [isActive, setIsActive] = useState(true);
-
-	let itemRef = useRef([]);
-
-	useEffect(() => {
-		setSlick(settings);
-	}, []);
-
-	useEffect(() => {
-		if (itemRef.current) {
-		}
-	}, [itemRef]);
-
-	return (
-		<Fragment>
-			<Slider {...slick}>
-				{data.map((item) => (
-					<ForwardedSliderItem
-						ref={(el) => (itemRef.current[item.id] = el)}
-						key={item.id}
-						{...item}
-						isActive={isActive}
-					/>
-				))}
-			</Slider>
-		</Fragment>
-	);
+const handleBeforeChange = (prevId, newId) => {
+	const prev = document.querySelector(`[data-index='${prevId}']`);
+	const prevTargetEls = prev.querySelectorAll(".animated");
+	prevTargetEls.forEach((item) => {
+		item.classList.remove("fadeUp-in");
+		item.classList.add("fadeUp-out");
+		const timer = setTimeout(() => {
+			item.classList.remove("fadeUp-out", "active");
+			clearTimeout(timer);
+		}, [300]);
+	});
+	const after = document.querySelector(`[data-index='${newId}']`);
+	const afterTargetEls = after.querySelectorAll(".animated");
+	afterTargetEls.forEach((item) => {
+		item.classList.remove("fadeUp-in");
+		item.classList.add("fadeUp-out");
+		item.classList.remove("fadeUp-out", "active");
+	});
 };
-
-export default FrontPageSlider;
 
 const NextArrow = ({ onClick }) => (
 	<button onClick={onClick} className="next-btn">
@@ -72,3 +54,31 @@ const PrevArrow = ({ onClick }) => (
 		<span className="icon icon-chevron-left"></span>
 	</button>
 );
+
+const settings = {
+	nextArrow: <NextArrow />,
+	prevArrow: <PrevArrow />,
+	speed: 1000,
+	autoPlay: false,
+	onInit: () => {
+		onInit();
+	},
+	afterChange: (idx) => {
+		handleOnChange(idx);
+	},
+	beforeChange: (prevId, newId) => {
+		handleBeforeChange(prevId, newId);
+	}
+};
+
+function FrontPageSlider() {
+	return (
+		<Slider {...settings}>
+			{data.map((item) => (
+				<ForwardedSliderItem key={item.id} {...item} />
+			))}
+		</Slider>
+	);
+}
+
+export default FrontPageSlider;
