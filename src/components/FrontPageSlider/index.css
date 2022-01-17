@@ -1,0 +1,131 @@
+.slick-prev {
+  left: 3% !important;
+  z-index: 1;
+}
+.slick-next {
+  right: 3% !important;
+  z-index: 1;
+}
+
+.item {
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+}
+
+.item > .container {
+  position: relative;
+}
+
+.item:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 38, 57, 0.3);
+}
+
+.item .box {
+  position: absolute;
+  width: 100%;
+  color: #fff;
+  top: 50%;
+  right: 0;
+  left: 0;
+  z-index: 99;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.item .box.box-bottom {
+  top: 90%;
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+.item .rating > * {
+  margin: 2px;
+}
+
+.item .rating.animated,
+.item .desc.animated {
+  display: none ;
+  text-shadow: 0 0 10px #000;
+}
+
+.item .desc.animated.active,
+.item .rating.animated.active
+{
+  display: block ;
+}
+
+.item .title {
+  font-size: 32px;
+  font-family: "Playfair Display", serif;
+  color: white;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  text-transform: none;
+  display: none
+}
+
+.item .title.active {
+  display: block
+}
+
+.item .title span {
+  color: #ceb071;
+  
+}
+
+.item .btn {
+  margin-top: 15px;
+  display: none;
+}
+
+.item div.active .btn {
+  display: inline-block
+}
+
+@media (min-width: 1200px) {
+   .item {
+    height: 700px;
+  }
+  .item .desc {
+    font-size: 18px;
+  }
+  .item .title {
+    font-size: 48px;
+  }
+}
+
+.next-btn {
+  position: absolute;
+  top: 50%;
+  right: 1.5%;
+  z-index: 1;
+  background-color: transparent;
+  border-color: transparent;
+  outline: none;
+  color: white;
+  font-size: 2.5rem;
+}
+
+.prev-btn {
+  position: absolute;
+  top: 50%;
+  left: 1.5%;
+  z-index: 1;
+  background-color: transparent;
+  border-color: transparent;
+  outline: none;
+  color: white;
+  font-size: 2.5rem;
+}
